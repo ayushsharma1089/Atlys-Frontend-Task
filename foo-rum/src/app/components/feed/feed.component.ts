@@ -68,7 +68,7 @@ export class FeedComponent {
 
   onLikeClick(index: number): void {
     const currentUser = localStorage.getItem('currentUser');
-    
+
     if (!currentUser) {
       alert('You need to login first to perform this operation');
       return;
@@ -86,7 +86,7 @@ export class FeedComponent {
       likedBy.push(currentUser);
       this.triggerLikeAnimation(index);
     }
-    
+
     this.feedInteraction.emit();
   }
 
@@ -100,6 +100,30 @@ export class FeedComponent {
 
   notImplemented(): void {
     alert('This feature is not implemented yet');
+  }
+
+  copyToClipboard(post: any): void {
+    const textToCopy = `${post.content}`;
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        alert('Post copied to clipboard!');
+      }).catch(() => {
+        alert('Failed to copy to clipboard');
+      });
+    } else {
+      const textArea = document.createElement('textarea');
+      textArea.value = textToCopy;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        alert('Post copied to clipboard!');
+      } catch {
+        alert('Failed to copy to clipboard');
+      }
+      document.body.removeChild(textArea);
+    }
   }
 
   private triggerLikeAnimation(index: number): void {
