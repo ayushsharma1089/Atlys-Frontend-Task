@@ -68,16 +68,26 @@ export class FeedComponent {
 
   onLikeClick(index: number): void {
     const currentUser = localStorage.getItem('currentUser');
-    if (!currentUser) return;
+    
+    if (!currentUser) {
+      alert('You need to login first to perform this operation');
+      return;
+    }
 
     const likedBy = this.posts[index].likedBy;
+    const isAlreadyLiked = likedBy.includes(currentUser);
 
-    if (!likedBy.includes(currentUser)) {
-      this.feedInteraction.emit();
+    if (isAlreadyLiked) {
+      this.posts[index].likeCount--;
+      const userIndex = likedBy.indexOf(currentUser);
+      likedBy.splice(userIndex, 1);
+    } else {
       this.posts[index].likeCount++;
       likedBy.push(currentUser);
       this.triggerLikeAnimation(index);
     }
+    
+    this.feedInteraction.emit();
   }
 
   getCurrentUser(): string {

@@ -16,6 +16,19 @@
   align-items: center;
 }
 
+/* Responsive: navigation container spacing */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -48,6 +61,29 @@
   color: black;
 }
 
+/* Responsive: logo sizing */
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 1.25rem;
+  }
+
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
+  .logo-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .auth-section {
   display: flex;
   align-items: center;
@@ -71,6 +107,21 @@
   }
 }
 
+/* Responsive: auth controls sizing */
+@media (max-width: 768px) {
+  .login-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
 .user-section {
   display: flex;
   align-items: center;
@@ -81,6 +132,14 @@
   font-weight: 500;
   color: #333;
   font-size: 1rem;
+}
+
+/* Ensure long usernames/emails don't overflow */
+.username {
+  max-width: 40vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .signout-btn {
@@ -96,6 +155,23 @@
   &:hover {
     background: #e9ecef;
     color: #333;
+  }
+}
+
+@media (max-width: 768px) {
+  .signout-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-section {
+    gap: 0.5rem;
+  }
+  .signout-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.85rem;
   }
 }
 

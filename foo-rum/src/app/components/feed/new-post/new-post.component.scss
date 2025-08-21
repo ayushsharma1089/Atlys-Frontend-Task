@@ -7,6 +7,20 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+  .post-editor {
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-editor {
+    padding: 0.75rem;
+    border-radius: 10px;
+  }
+}
+
 .editor-toolbar {
   display: flex;
   align-items: center;
@@ -14,6 +28,19 @@
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .editor-toolbar {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .editor-toolbar {
+    gap: 0.5rem;
+  }
 }
 
 .format-dropdown {
@@ -35,6 +62,12 @@
   gap: 0.5rem;
 }
 
+@media (max-width: 480px) {
+  .editor-buttons, .align-buttons, .special-buttons {
+    gap: 0.4rem;
+  }
+}
+
 .format-btn, .align-btn, .special-btn {
   padding: 0.5rem 0.75rem;
   border: 1px solid #ddd;
@@ -46,6 +79,13 @@
 
   &:hover {
     background-color: #f0f0f0;
+  }
+}
+
+@media (max-width: 480px) {
+  .format-btn, .align-btn, .special-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -63,6 +103,12 @@
   align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .editor-input {
+    gap: 0.4rem;
+  }
 }
 
 .emoji-icon {
@@ -85,10 +131,23 @@
   }
 }
 
+@media (max-width: 480px) {
+  .post-input {
+    min-height: 60px;
+    font-size: 0.95rem;
+  }
+}
+
 .editor-actions {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .editor-actions {
+    gap: 0.4rem;
+  }
 }
 
 .action-btn {
@@ -102,6 +161,13 @@
 
   &:hover {
     background-color: #f0f0f0;
+  }
+}
+
+@media (max-width: 480px) {
+  .action-btn {
+    padding: 0.4rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -123,4 +189,28 @@
     opacity: 0.4;
     cursor: not-allowed;
   }
+}
+
+@media (max-width: 480px) {
+  .send-btn {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.9rem;
+  }
+}
+
+.format-btn.active {
+  background-color: #1976d2;
+  color: white;
+}
+
+.post-input.bold-text {
+  font-weight: bold;
+}
+
+.post-input.italic-text {
+  font-style: italic;
+}
+
+.post-input.underline-text {
+  text-decoration: underline;
 }
