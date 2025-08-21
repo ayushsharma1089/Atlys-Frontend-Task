@@ -10,6 +10,7 @@ import {
   query,
   stagger
 } from '@angular/animations';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-feed',
@@ -39,7 +40,8 @@ export class FeedComponent {
   @Output() feedInteraction = new EventEmitter<void>();
   private likeAnimations = new Set<number>();
 
-  constructor(private postsService: PostsService, private authService: AuthService) {
+  constructor(private postsService: PostsService, private authService: AuthService,
+    private notificationService: NotificationService) {
     this.posts = this.postsService.getPosts();
   }
 
@@ -70,7 +72,7 @@ export class FeedComponent {
     const currentUser = localStorage.getItem('currentUser');
 
     if (!currentUser) {
-      alert('You need to login first to perform this operation');
+      this.notificationService.show('You need to login first to perform this operation', 'error');
       return;
     }
 
@@ -99,7 +101,7 @@ export class FeedComponent {
   }
 
   notImplemented(): void {
-    alert('This feature is not implemented yet');
+    this.notificationService.show('This feature is not implemented yet', 'error');
   }
 
   copyToClipboard(post: any): void {
@@ -107,9 +109,9 @@ export class FeedComponent {
 
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(textToCopy).then(() => {
-        alert('Post copied to clipboard!');
+        this.notificationService.show('Post copied to clipboard!', 'success');
       }).catch(() => {
-        alert('Failed to copy to clipboard');
+        this.notificationService.show('Failed to copy to clipboard', 'error');
       });
     } else {
       const textArea = document.createElement('textarea');
@@ -118,9 +120,9 @@ export class FeedComponent {
       textArea.select();
       try {
         document.execCommand('copy');
-        alert('Post copied to clipboard!');
+        this.notificationService.show('Post copied to clipboard!', 'success');
       } catch {
-        alert('Failed to copy to clipboard');
+        this.notificationService.show('Failed to copy to clipboard', 'error');
       }
       document.body.removeChild(textArea);
     }

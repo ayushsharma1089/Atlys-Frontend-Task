@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,12 +12,13 @@ export class SignupComponent {
   password: string = '';
   repeatPassword: string = '';
   @Input() standalone: boolean = false;
-  
+
   @Output() signUpSuccess = new EventEmitter<void>();
   @Output() switchToSignIn = new EventEmitter<void>();
   @Output() closeModal = new EventEmitter<void>();
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService,
+    private notificationService: NotificationService) { }
 
   onSignUp(): void {
     if (this.email && this.password && this.repeatPassword) {
@@ -25,10 +27,10 @@ export class SignupComponent {
         if (success) {
           this.signUpSuccess.emit();
         } else {
-          alert('Failed to create account. Please try again.');
+          this.notificationService.show('Failed to create account. Please try again.', 'error');
         }
       } else {
-        alert('Passwords do not match!');
+        this.notificationService.show('Passwords do not match!', 'error');
       }
     }
   }

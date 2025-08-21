@@ -11,6 +11,7 @@ import { NewPostComponent } from 'src/app/components/feed/new-post/new-post.comp
 import { SigninComponent } from 'src/app/components/auth/signin/signin.component';
 import { SignupComponent } from 'src/app/components/auth/signup/signup.component';
 import { AuthComponent } from 'src/app/components/auth/auth.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AuthComponent } from 'src/app/components/auth/auth.component';
     NewPostComponent,
     SigninComponent,
     SignupComponent,
-    AuthComponent
+    AuthComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,

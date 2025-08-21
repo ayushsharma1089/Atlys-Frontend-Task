@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-signin',
@@ -10,12 +11,13 @@ export class SigninComponent {
   email: string = '';
   password: string = '';
   @Input() standalone: boolean = false;
-  
+
   @Output() signInSuccess = new EventEmitter<void>();
   @Output() switchToSignUp = new EventEmitter<void>();
   @Output() closeModal = new EventEmitter<void>();
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService,
+    private notificationService: NotificationService) { }
 
   onSignIn(): void {
     if (this.email && this.password) {
@@ -23,7 +25,7 @@ export class SigninComponent {
       if (success) {
         this.signInSuccess.emit();
       } else {
-        alert('Invalid credentials. Please try again.');
+        this.notificationService.show('Invalid credentials. Please try again.', 'error');
       }
     }
   }
