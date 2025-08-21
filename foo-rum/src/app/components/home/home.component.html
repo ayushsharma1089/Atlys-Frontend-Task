@@ -1,0 +1,16 @@
+<app-navigation (loginClick)="onLoginClick()"></app-navigation>
+<app-feed (feedInteraction)="onFeedInteraction()"></app-feed>
+
+<app-signin 
+  *ngIf="showSignInModal"
+  (signInSuccess)="onSignInSuccess()"
+  (switchToSignUp)="onSwitchToSignUp()"
+  (closeModal)="onCloseModal()">
+</app-signin>
+
+<app-signup 
+  *ngIf="showSignUpModal"
+  (signUpSuccess)="onSignUpSuccess()"
+  (switchToSignIn)="onSwitchToSignIn()"
+  (closeModal)="onCloseModal()">
+</app-signup>

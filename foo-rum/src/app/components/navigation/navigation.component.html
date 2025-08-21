@@ -1,0 +1,20 @@
+<header class="navigation">
+  <div class="nav-container">
+    <div class="logo">
+      <div class="logo-icon">
+        <div class="play-triangle"></div>
+      </div>
+      <span class="logo-text">foo-rum</span>
+    </div>
+    <div class="auth-section">
+      <div *ngIf="!isAuthenticated" class="login-btn" (click)="onLoginClick()">
+        <span>{{ isOnAuthRoute ? 'Back to Home' : 'Login' }}</span>
+        <i class="arrow-icon" *ngIf="!isOnAuthRoute">→</i>
+      </div>
+      <div *ngIf="isAuthenticated" class="user-section">
+        <span class="username">{{ currentUser }}</span>
+        <button class="signout-btn" (click)="onSignOut()">Sign Out</button>
+      </div>
+    </div>
+  </div>
+</header>

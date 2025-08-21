@@ -1,0 +1,20 @@
+<app-navigation></app-navigation>
+<div class="auth-page">
+  <app-signin 
+    *ngIf="showSignInModal"
+    [standalone]="true"
+    (signInSuccess)="onSignInSuccess()"
+    (switchToSignUp)="onSwitchToSignUp()"
+    (closeModal)="onCloseModal()">
+  </app-signin>
+
+  <app-signup 
+    *ngIf="showSignUpModal"
+    [standalone]="true"
+    (signUpSuccess)="onSignUpSuccess()"
+    (switchToSignIn)="onSwitchToSignIn()"
+    (closeModal)="onCloseModal()">
+  </app-signup>
+</div>
+
+

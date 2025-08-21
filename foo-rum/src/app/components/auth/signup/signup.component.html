@@ -1,0 +1,53 @@
+<div class="modal-overlay" [class.overlay-hidden]="standalone" (click)="onOverlayClick($event)">
+  <div class="modal-content" [class.centered-on-page]="standalone">
+    <div class="modal-header">
+      <div class="modal-icon">📦</div>
+      <h2 class="modal-title">Create an account to continue</h2>
+      <p class="modal-subtitle">Create an account to access all the features on this app</p>
+    </div>
+    
+    <form class="modal-form" (ngSubmit)="onSignUp()">
+      <div class="form-group">
+        <label for="email">Email or username</label>
+        <input 
+          type="text" 
+          id="email" 
+          name="email" 
+          [(ngModel)]="email" 
+          placeholder="Enter your email or username"
+          required
+        >
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          [(ngModel)]="password" 
+          placeholder="Enter your password"
+          required
+        >
+      </div>
+      
+      <div class="form-group">
+        <label for="repeatPassword">Repeat password</label>
+        <input 
+          type="password" 
+          id="repeatPassword" 
+          name="repeatPassword" 
+          [(ngModel)]="repeatPassword" 
+          placeholder="Enter your password again"
+          required
+        >
+      </div>
+      
+      <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+    
+    <div class="modal-footer">
+      <p>Already have an account? <a href="#" (click)="onSignInClick(); $event.preventDefault()">Sign In</a></p>
+    </div>
+  </div>
+</div>

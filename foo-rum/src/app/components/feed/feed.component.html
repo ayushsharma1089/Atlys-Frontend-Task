@@ -1,0 +1,31 @@
+<div class="feed-container">
+  <app-new-post (postCreated)="onPostCreated($event)" (authRequired)="onAuthRequired()"></app-new-post>
+  <div class="posts-container" [@listAnimation]>
+    <div class="post-card" *ngFor="let post of posts; let i = index"  @postAnimation>
+      <div class="post-header">
+        <div class="user-info">
+          <div class="profile-pic"></div>
+          <div class="user-details">
+            <span class="username">{{ post.username }}</span>
+            <span class="post-time">{{ post.time }}</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="post-content">
+        <p class="post-text">{{ post.content }}</p>
+      </div>
+      
+      <div class="post-actions">
+        <button class="post-action-btn" (click)="onLikeClick(i)">
+          <span class="like-icon" [class.heart-anim]="isLikeAnimating(i)">
+            {{ post.likedBy.includes(getCurrentUser()) ? '❤️' : '🤍' }}
+          </span>
+          <span class="like-count">{{ post.likeCount }}</span>
+        </button>
+        <button class="post-action-btn" (click)="notImplemented()">💬</button>
+        <button class="post-action-btn" (click)="notImplemented()">↗️</button>
+      </div>
+    </div>
+  </div>
+</div>

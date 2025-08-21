@@ -1,0 +1,36 @@
+<div class="post-editor">
+  <div class="editor-toolbar">
+    <select class="format-dropdown">
+      <option>Paragraph</option>
+    </select>
+    <div class="editor-buttons">
+      <button class="format-btn" (click)="notImplemented()">B</button>
+      <button class="format-btn" (click)="notImplemented()">I</button>
+      <button class="format-btn" (click)="notImplemented()">U</button>
+      <button class="align-btn" (click)="notImplemented()">☰</button>
+      <button class="align-btn" (click)="notImplemented()">≡1</button>
+      <button class="special-btn" (click)="notImplemented()">❞</button>
+      <button class="special-btn" (click)="notImplemented()">&lt;/&gt;</button>
+    </div>
+    
+    <button class="delete-btn">🗑️</button>
+  </div>
+  
+  <div class="editor-input">
+    <span class="emoji-icon">😊</span>
+    <textarea [(ngModel)]="newPostContent" placeholder="How are you feeling today?" class="post-input"></textarea>
+  </div>
+  
+  <div class="editor-actions">
+    <button class="action-btn" (click)="notImplemented()">+</button>
+    <button class="action-btn" (click)="notImplemented()">🎙️</button>
+    <button class="action-btn" (click)="notImplemented()">🎥</button>
+    <button class="action-btn" (click)="notImplemented()">🔗</button>
+    <button class="send-btn" (click)="onPost()" [disabled]="!newPostContent || !newPostContent.trim()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1E88E5" viewBox="0 0 20 20">
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+      </svg>
+    </button>
+  </div>
+</div>
