@@ -1,7 +1,13 @@
 <div class="modal-overlay" [class.overlay-hidden]="standalone" (click)="onOverlayClick($event)">
   <div class="modal-content" [class.centered-on-page]="standalone">
     <div class="modal-header">
-      <div class="modal-icon">🔄</div>
+      <div class="modal-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+          <polyline points="10,17 15,12 10,7"/>
+          <line x1="15" y1="12" x2="3" y2="12"/>
+        </svg>
+      </div>
       <h2 class="modal-title">Sign in to continue</h2>
       <p class="modal-subtitle">Sign in to access all the features on this app</p>
     </div>
