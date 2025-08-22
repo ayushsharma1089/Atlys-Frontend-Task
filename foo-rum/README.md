@@ -31,6 +31,10 @@ A modern social media feed application built with Angular 16 and TypeScript, fea
 - **Routing**: Angular Router
 - **Build Tool**: Angular CLI
 
+## Live Demo
+Try the live application: https://atlys-frontend-task-ruddy.vercel.app/
+The application is deployed on Vercel and ready to use with all features fully functional.
+
 ## Installation
 
 1. **Clone the repository**
@@ -160,6 +164,8 @@ src/app/
 ```
 
 ## Deployment
+The application is deployed on Vercel with automatic deployments from the main branch.
+Live URL: https://atlys-frontend-task-ruddy.vercel.app/
 
 ### Build for Production
 ```bash
