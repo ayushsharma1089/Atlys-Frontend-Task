@@ -2,7 +2,15 @@
 
 A modern social media feed application built with Angular 16 and TypeScript, featuring authentication flow and interactive post management.
 
-## Features
+### Key Features Implemented
+
+- Like and unlike feed posts with animated heart effects
+- Add new posts with rich content functionality
+- Complete sign-in/sign-up authentication system
+- Bold, italic, underline buttons working in editor with formatted text appearing in published posts
+- Copy to clipboard functionality added to all feed posts
+- Delete option on posts that clears current content and resets editor options
+- Fully responsive layout across all devices and screen sizes
 
 ### Core Functionality
 - **Feed Page**: Landing page with post editor and social feed
