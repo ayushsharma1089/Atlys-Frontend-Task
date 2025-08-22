@@ -6,9 +6,5 @@
   {
     "email": "test@user.com",
     "password": "testpass"
-  },
-  {
-    "email": "q",
-    "password": "q"
   }
 ]

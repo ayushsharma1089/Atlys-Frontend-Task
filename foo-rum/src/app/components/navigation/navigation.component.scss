@@ -16,7 +16,6 @@
   align-items: center;
 }
 
-/* Responsive: navigation container spacing */
 @media (max-width: 1024px) {
   .nav-container {
     padding: 0 1.5rem;
@@ -38,7 +37,6 @@
 .logo-icon {
   width: 32px;
   height: 32px;
-  background: black;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -56,12 +54,11 @@
 }
 
 .logo-text {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: black;
 }
 
-/* Responsive: logo sizing */
 @media (max-width: 768px) {
   .logo-text {
     font-size: 1.25rem;
@@ -107,7 +104,6 @@
   }
 }
 
-/* Responsive: auth controls sizing */
 @media (max-width: 768px) {
   .login-btn {
     padding: 0.4rem 0.75rem;
@@ -134,7 +130,6 @@
   font-size: 1rem;
 }
 
-/* Ensure long usernames/emails don't overflow */
 .username {
   max-width: 40vw;
   white-space: nowrap;

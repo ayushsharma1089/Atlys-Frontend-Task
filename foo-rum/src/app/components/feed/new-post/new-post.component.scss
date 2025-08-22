@@ -1,210 +1,288 @@
 
 .post-editor {
-  background: #f8f9fa;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border: 1px solid #e6e8ec;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.06),
+    0 1px 3px rgba(16, 24, 40, 0.08);
 }
 
 @media (max-width: 768px) {
   .post-editor {
-    padding: 1rem;
-    margin-bottom: 1.25rem;
+    padding: 16px;
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .post-editor {
-    padding: 0.75rem;
-    border-radius: 10px;
+    padding: 14px;
+    border-radius: 12px;
   }
 }
 
 .editor-toolbar {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #e0e0e0;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eef1f5;
 }
 
 @media (max-width: 768px) {
   .editor-toolbar {
-    gap: 0.75rem;
+    gap: 10px;
     flex-wrap: wrap;
   }
 }
 
 @media (max-width: 480px) {
   .editor-toolbar {
-    gap: 0.5rem;
+    gap: 8px;
+  }
+}
+
+.editor-buttons {
+  display: flex;
+  gap: 6px;
+  background: #f5f5f5;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .editor-buttons {
+    gap: 4px;
+    padding: 4px;
   }
 }
 
 .format-dropdown {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: white;
-  font-size: 0.9rem;
-}
-
-.delete-btn {
-  color: red;
-  background: none;
-  border: none;
-}
-
-.editor-buttons, .align-buttons, .special-buttons {
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  font-size: 12px;
+  color: #64748b;
+  cursor: pointer;
+  min-width: 90px;
+  font-weight: 500;
   display: flex;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  
+  &:hover {
+    border-color: #94a3b8;
+    background: #f1f5f9;
+  }
 }
 
 @media (max-width: 480px) {
-  .editor-buttons, .align-buttons, .special-buttons {
-    gap: 0.4rem;
+  .format-dropdown {
+    height: 24px;
+    font-size: 11px;
+    min-width: 80px;
+    padding: 0 8px;
   }
 }
 
 .format-btn, .align-btn, .special-btn {
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.2s;
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: all 120ms ease;
 
   &:hover {
-    background-color: #f0f0f0;
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #334155;
   }
+}
+
+.format-btn.active {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+  color: #1e293b;
 }
 
 @media (max-width: 480px) {
   .format-btn, .align-btn, .special-btn {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.95rem;
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
   }
 }
 
 .delete-btn {
   margin-left: auto;
-  padding: 0.5rem;
+  width: 32px;
+  height: 32px;
+  padding: 0;
   border: none;
-  background: transparent;
+  background: #fef2f2;
+  border-radius: 50%;
   cursor: pointer;
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dc2626;
+  transition: all 120ms ease;
+
+  &:hover {
+    background: #fee2e2;
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 480px) {
+  .delete-btn {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 .editor-input {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 768px) {
   .editor-input {
-    gap: 0.4rem;
+    gap: 10px;
   }
 }
 
 .emoji-icon {
-  font-size: 1.2rem;
-  padding-top: 0.5rem;
+  padding-top: 12px;
+  color: #6b7280;
 }
 
 .post-input {
   flex: 1;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  background: white;
-  min-height: 72px;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #ffffff;
+  min-height: 80px;
   resize: vertical;
+  color: #111827;
+  line-height: 1.5;
 
   &::placeholder {
-    color: #999;
+    color: #9ca3af;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
   }
 }
 
 @media (max-width: 480px) {
   .post-input {
-    min-height: 60px;
-    font-size: 0.95rem;
+    min-height: 70px;
+    font-size: 13.5px;
+    padding: 10px 14px;
   }
 }
 
 .editor-actions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 @media (max-width: 768px) {
   .editor-actions {
-    gap: 0.4rem;
+    gap: 6px;
   }
 }
 
 .action-btn {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  border-radius: 50%;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: all 120ms ease;
 
   &:hover {
-    background-color: #f0f0f0;
+    background: #f9fafb;
+    border-color: #9ca3af;
+    color: #374151;
   }
 }
 
 @media (max-width: 480px) {
   .action-btn {
-    padding: 0.4rem;
-    font-size: 0.95rem;
+    width: 28px;
+    height: 28px;
   }
 }
 
 .send-btn {
   margin-left: auto;
-  padding: 0.6rem 1rem;
-  background: #111;
-  color: white;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+  color: #8b5cf6;
   border: none;
-  border-radius: 8px;
+  border-radius: 50%;
   cursor: pointer;
-  font-size: 0.95rem;
-  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 120ms ease;
 
   &:hover {
-    background-color: #000;
+    background: #f3f4f6;
+    transform: scale(1.05);
   }
+
   &:disabled {
-    opacity: 0.4;
+    color: #d1d5db;
     cursor: not-allowed;
+    transform: none;
   }
 }
 
 @media (max-width: 480px) {
   .send-btn {
-    padding: 0.5rem 0.85rem;
-    font-size: 0.9rem;
+    width: 32px;
+    height: 32px;
   }
 }
 
-.format-btn.active {
-  background-color: #1976d2;
-  color: white;
-}
-
 .post-input.bold-text {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .post-input.italic-text {
