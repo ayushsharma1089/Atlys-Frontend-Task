@@ -25,7 +25,7 @@ export class SigninComponent {
       if (success) {
         this.signInSuccess.emit();
       } else {
-        this.notificationService.show('Invalid credentials. Please try again.', 'error');
+        alert('Invalid credentials. Please try again.');
       }
     }
   }
