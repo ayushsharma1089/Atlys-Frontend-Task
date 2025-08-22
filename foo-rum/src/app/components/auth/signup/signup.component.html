@@ -1,6 +1,12 @@
 <div class="modal-overlay" [class.overlay-hidden]="standalone" (click)="onOverlayClick($event)">
   <div class="modal-content" [class.centered-on-page]="standalone">
     <div class="modal-header">
+      <button *ngIf="!standalone" class="close-btn" type="button" (click)="closeModal.emit()" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="4" x2="16" y2="16" />
+          <line x1="16" y1="4" x2="4" y2="16" />
+        </svg>
+      </button>
       <div class="modal-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
@@ -50,7 +56,7 @@
         >
       </div>
       
-      <button type="submit" class="signup-btn">Sign Up</button>
+      <button type="submit" class="signup-btn" [disabled]="!email || !password || !repeatPassword">Sign Up</button>
     </form>
     
     <div class="modal-footer">
